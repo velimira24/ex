@@ -6,13 +6,17 @@ public class newtask {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Введите данные (Фамилия Имя Отчество дата рождения номер телефона пол): ");
+        System.out.print("Введите данные (Фамилию Имя Отчество Дату рождения Номер телефона Пол): ");
         String input = scanner.nextLine();
 
         String[] data = input.split(" ");
 
-        if (data.length != 6) {
-            System.out.println("Ошибка! Введено неверное количество данных.");
+        if (data.length < 6) {
+            System.out.println("Ошибка! Вы ввели не все данные.");
+            return;
+        }
+        if (data.length > 6) {
+            System.out.println("Ошибка! Вы ввели лишние данные");
             return;
         }
 
